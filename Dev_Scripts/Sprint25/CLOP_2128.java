@@ -13,7 +13,7 @@ public class CLOP_2128 {
 	@Test
 	public void CLOP_2128_Test() throws Exception {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe"); 
+		System.setProperty("webdriver.chrome.driver", "src\\pages\\chromedriver.exe"); 
 		ChromeDriver Chrome_Driver = new ChromeDriver(); 
 		Chrome_Driver.manage().deleteAllCookies();
 				
@@ -38,8 +38,8 @@ public class CLOP_2128 {
 		Assert.assertEquals("COURSE", Chrome_Driver.findElement(By.linkText("COURSE")).getText());
 	
 		// Validate the My Most Recent CLOs list.
-		Assert.assertEquals("MY MOST RECENT CLOS more...", Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[1]/h3")).getText());		
-		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='clo-section']/div[1]/ol/li")).size());
+		Assert.assertEquals("MY MOST RECENT CLOS more...", Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div/div[1]/h3")).getText());		
+		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='application-clo-container']/ol/li")).size());
 		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[1]/div")).getText().contains("Published"));	
 		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[1]/div")).getText().contains("Updated"));
 		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[1]/div")).getText().contains("Private"));
@@ -51,41 +51,41 @@ public class CLOP_2128 {
 		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@class='application-reports-graph-partial']")).getText().contains("CLOs with warnings:"));
 		
 		// Validate the Most Recent Projects list.
-		Assert.assertEquals("MOST RECENT PROJECTS more...", Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[3]/h3")).getText());		
-		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='clo-section']/div[3]/ol/li")).size());
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div[3]")).getText().contains("Total Projects"));	
+		Assert.assertEquals("MOST RECENT PROJECTS more...", Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div/div[3]/h3")).getText());		
+		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='application-clo-projects']/ol/li")).size());
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='clo-section']/div/div[3]")).getText().contains("Total Projects"));	
 
-		// Validate the My Most Recent Lessons list.
-		Assert.assertEquals("MY MOST RECENT LESSONS more...", Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[1]/h3")).getText());		
-		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='course-section']/div[1]/ol/li")).size());
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[1]/div")).getText().contains("Published"));	
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[1]/div")).getText().contains("Updated"));
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[1]/div")).getText().contains("Private"));
+/*		// Validate the My Most Recent Lessons list.   -------Lessons removed for now----will replace once it's defined.
+		Assert.assertEquals("MY MOST RECENT LESSONS more...", Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div/div[1]/h3")).getText());		
+		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='course-section']/div/div[1]/ol/li")).size());
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@class='application-report-counts']")).getText().contains("Published"));	
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@class='application-report-counts']")).getText().contains("Updated"));
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@class='application-report-counts']")).getText().contains("Private"));
 		
 		// Validate the Circle report with total Lessons and warnings.
 		Assert.assertEquals("250", Chrome_Driver.findElement(By.xpath("//*[@id='course-report']")).getAttribute("height"));	
 		Assert.assertEquals("250", Chrome_Driver.findElement(By.xpath("//*[@id='course-report']")).getAttribute("width"));	
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[2]/div[2]")).getText().contains("Total Lessons:"));
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[2]/div[3]")).getText().contains("Lessons with warnings:"));
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div/div[2]/div[2]")).getText().contains("Total Lessons:"));
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div/div[2]/div[3]")).getText().contains("Lessons with warnings:"));
 		
 		// Validate the My Most Recent Courses list.
-		Assert.assertEquals("MY MOST RECENT COURSES more...", Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[3]/h3")).getText());		
-		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='course-section']/div[3]/ol/li")).size());
-		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div[3]")).getText().contains("Total Projects"));	
-
+		Assert.assertEquals("MY MOST RECENT COURSES more...", Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div/div[3]/h3")).getText());		
+		Assert.assertEquals(10, Chrome_Driver.findElements(By.xpath("//*[@id='course-section']/div/div[3]/ol/li")).size());
+		Assert.assertTrue(Chrome_Driver.findElement(By.xpath("//*[@id='course-section']/div/div[3]")).getText().contains("Total Projects"));	
+*/
 		// Validate the buttons on the Metadata Dashboard.
 		String IH = null;
 		String LO = null;
 		String AB = null;
 		String CB = null;
-		List<WebElement> AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='row dashboard-links text-center']/div/a"));	
+		List<WebElement> AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='application-tool-links']/div/a"));	
 		for  (WebElement eachResult : AllSearchResults) {
 			String sValue = null;
 			sValue = eachResult.getAttribute("href");	
 			if(sValue.equalsIgnoreCase("https://habitat.inkling.com/")){
 				IH = "true";
 	        }
-			if(sValue.equalsIgnoreCase("https://metadatadev.clo.edmesh.com/learning-objectives/")){
+			if(sValue.equalsIgnoreCase("https://metadatadev.clo.edmesh.com/learningobjectives/")){
 				LO = "true";
 	        }
 			if(sValue.equalsIgnoreCase("http://academicbenchmarks.com/")){

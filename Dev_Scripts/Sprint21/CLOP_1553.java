@@ -22,6 +22,7 @@ public class CLOP_1553 {
 		Thread.sleep(3000);
 		MetadataDashboardPage mddbPage = new MetadataDashboardPage(Chrome_Driver);
         mddbPage.login("qa_test", "Password1");
+        Chrome_Driver.manage().window().maximize();
 		Thread.sleep(3000);
 
 		// Validating that the Learning Statements tile in the Metadata Dashboard should no longer appear.
@@ -40,7 +41,7 @@ public class CLOP_1553 {
 		// Validating that Learning Objectives tile in the Metadata Dashboard still appears and clicking it will navigate to a Learning Objectives/Statements page.
 		String LO = null;
 		String LOicon = "https://metadatadev.clo.edmesh.com/img/home/nav-icon-lo-ls.png";
-		AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='row dashboard-links text-center']/div/a/img"));
+		AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='application-tool-links']/div/a/img"));
 		for  (WebElement eachResult : AllSearchResults) {
 			String sValue = null;
 			sValue = eachResult.getAttribute("src");		

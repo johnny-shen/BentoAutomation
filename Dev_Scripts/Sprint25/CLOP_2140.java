@@ -24,7 +24,7 @@ public class CLOP_2140 {
 		Thread.sleep(3000);
 		
 		// Navigate to Learning Objectives Pending Approval.
-		Chrome_Driver.findElement(By.xpath("//*[@href='learning-objectives/']")).click();
+		Chrome_Driver.findElement(By.xpath("//*[@href='learningobjectives/']")).click();
 		Thread.sleep(3000);
 		Chrome_Driver.findElement(By.xpath("//*[@id='pendingapproval']")).click();
 		Thread.sleep(5000);

@@ -27,7 +27,7 @@ public class CLOP_1583 {
 		String taggingtool = "Tagging Tool";
 
 		// Validate that in the Metadata Dashboard the "Tagging Tool" tile no longer appears and "Content Browser" appears instead.
-		List<WebElement> AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='row dashboard-links text-center']/div/h4"));	
+		List<WebElement> AllSearchResults=Chrome_Driver.findElements(By.xpath("//*[@class='application-tool-links']/div/h4"));	
 		String cbtile = null; 
 		for  (WebElement eachResult : AllSearchResults) {
 			String sValue = null;

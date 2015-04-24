@@ -16,7 +16,7 @@ public class CLOP_1286 {
 	@Test
 	public void CLOP_1286_Test() throws Exception {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe"); 
+		System.setProperty("webdriver.chrome.driver", "src\\pages\\chromedriver.exe"); 
 		ChromeDriver Chrome_Driver = new ChromeDriver(); 
 		Chrome_Driver.manage().deleteAllCookies();
 				
@@ -72,7 +72,7 @@ public class CLOP_1286 {
 		
 		// Go to the Concept page and validate that the Learning Statements appear both in the Metadata Table and in the Add New Metadata section.
 		Chrome_Driver.findElement(By.xpath("//*[@id='chapterHierarchy']/ul/li/ul/li[1]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		rowCount=Chrome_Driver.findElements(By.xpath("//*[@id='metadatatable']/tbody/tr")).size();
 		for (int i=1;i<=rowCount;i++) {
 			String sValue = null;
@@ -116,7 +116,7 @@ public class CLOP_1286 {
 		
 		// Navigate to the Model page and validate that the deleted Learning Statement above still appears in the Model page.
 		Chrome_Driver.findElement(By.xpath("//*[@id='chapterHierarchy']/ul/li/ul/li[2]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		rowCount=Chrome_Driver.findElements(By.xpath("//*[@id='metadatatable']/tbody/tr")).size();
 		noLS = null;
 		for (int i=1;i<=rowCount;i++) {
@@ -131,7 +131,7 @@ public class CLOP_1286 {
 		
 		// Navigate back to the Concept page and verify the removed Learning Statement is still removed.
 		Chrome_Driver.findElement(By.xpath("//*[@id='chapterHierarchy']/ul/li/ul/li[1]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		rowCount=Chrome_Driver.findElements(By.xpath("//*[@id='metadatatable']/tbody/tr")).size();
 		noLS = null;
 		for (int i=1;i<=rowCount;i++) {
@@ -158,7 +158,7 @@ public class CLOP_1286 {
 			}
 		}
 		Chrome_Driver.findElement(By.xpath("//*[@id='chapterHierarchy']/ul/li/ul/li[1]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		rowCount=Chrome_Driver.findElements(By.xpath("//*[@id='metadatatable']/tbody/tr")).size();
 		noLS = null;
 		for (int i=1;i<=rowCount;i++) {
@@ -193,7 +193,7 @@ public class CLOP_1286 {
 		Chrome_Driver.findElement(By.xpath("//*[@id='viewdeletemetadata']")).click();
 		Thread.sleep(3000);
 		Chrome_Driver.findElement(By.xpath("//*[@id='chapterHierarchy']/ul/li/ul/li[1]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		rowCount=Chrome_Driver.findElements(By.xpath("//*[@id='metadatatable']/tbody/tr")).size();
 		for (int i=1;i<=rowCount;i++) {
 			String sValue = null;

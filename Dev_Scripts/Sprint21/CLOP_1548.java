@@ -28,7 +28,7 @@ public class CLOP_1548 {
 		String LO = "CLO learning objective missing";
 		String LOwarning = "The CLO needs a learning objective.Resolve";
 		String learningobjectivemissing = "Learning Objective Missing";
-		String ELS = "Untitle card learning statements missing";
+		String ELS = "Chapter01/reader_4.html card learning statements missing";
 		String LS = "CLO learning statements is included";
 		String passed = "Requirement verified";
 		

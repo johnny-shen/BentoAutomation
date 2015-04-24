@@ -11,7 +11,7 @@ public class CLOP_1497 {
 
 	@Test
 	public void CLOP_1497_Test() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe"); 
+		System.setProperty("webdriver.chrome.driver", "src\\pages\\chromedriver.exe"); 
 		ChromeDriver Chrome_Driver = new ChromeDriver(); 
 		Chrome_Driver.manage().deleteAllCookies();
 		
